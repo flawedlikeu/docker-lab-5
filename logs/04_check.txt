@@ -1,0 +1,30 @@
+$ docker images quadratic-solver
+IMAGE                     ID             DISK USAGE   CONTENT SIZE   EXTRA
+quadratic-solver:latest   0e2dcb9d3fd5       78.9MB         18.5MB   U    
+
+$ docker ps -a --filter name=quad- --format 'table {{.Names}}\t{{.Image}}\t{{.Status}}'
+NAMES          IMAGE              STATUS
+quad-bad       quadratic-solver   Exited (1) Less than a second ago
+quad-linear    quadratic-solver   Exited (0) Less than a second ago
+quad-none      quadratic-solver   Exited (0) Less than a second ago
+quad-one       quadratic-solver   Exited (0) Less than a second ago
+quad-two       quadratic-solver   Exited (0) Less than a second ago
+quad-default   quadratic-solver   Exited (0) 1 second ago
+
+$ docker logs quad-two
+====================================================
+ РОЗВ'ЯЗУВАЧ КВАДРАТНИХ РІВНЯНЬ  (варіант 5)
+====================================================
+ Коефіцієнти: a = 2, b = -7, c = 3
+ Рівняння:    2x² - 7x + 3 = 0
+----------------------------------------------------
+ Крок 1. Дискримінант D = b² - 4ac
+         D = (-7)² - 4·2·(3) = 49 - (24) = 25
+ Крок 2. D = 25 > 0 — два різні дійсні корені.
+         √D = 5
+ Крок 3. x = (-b ± √D) / (2a)
+         x₁ = (7 + 5) / 4 = 3
+         x₂ = (7 - 5) / 4 = 0.5
+ Відповідь: x₁ = 3, x₂ = 0.5
+====================================================
+

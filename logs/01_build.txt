@@ -1,0 +1,43 @@
+$ docker --version
+Docker version 29.9.2, build a82e528
+
+$ docker build --no-cache -t quadratic-solver .
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 402B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-alpine
+#2 DONE 0.3s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 74B done
+#3 DONE 0.0s
+
+#4 [1/4] FROM docker.io/library/python:3.12-alpine@sha256:c5ba3deef00c7758561a0f03c26f44f10589263d40e732b8748e0d1f38f6dd89
+#4 resolve docker.io/library/python:3.12-alpine@sha256:c5ba3deef00c7758561a0f03c26f44f10589263d40e732b8748e0d1f38f6dd89 done
+#4 DONE 0.0s
+
+#5 [2/4] WORKDIR /app
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 29B done
+#6 DONE 0.0s
+
+#7 [3/4] COPY main.py .
+#7 DONE 0.0s
+
+#8 [4/4] RUN adduser -D appuser
+#8 DONE 0.1s
+
+#9 exporting to image
+#9 exporting layers 0.0s done
+#9 exporting manifest sha256:eca581873702975c6c4dd0dcf621a32534fdd1fb3598fb280c7bbad8f494abdf done
+#9 exporting config sha256:5db5cd38524521ae45e0dc0be35ffc0152a1971d208bf159db149d74a709019e done
+#9 exporting attestation manifest sha256:2d31acb8cf13b5f58eed50e1efafa9972a9aa24480ae7682ec19a9020d1ac178 done
+#9 exporting manifest list sha256:0e2dcb9d3fd5ce66f3d82bdd1035b8235527b33b421d8c82bb2899d53db4eefd done
+#9 naming to docker.io/library/quadratic-solver:latest done
+#9 unpacking to docker.io/library/quadratic-solver:latest 0.0s done
+#9 DONE 0.1s
